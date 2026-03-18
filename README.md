@@ -148,3 +148,9 @@ type BookingService interface {
    - isValid(): ตรวจสอบว่าข้อมูลพื้นฐานที่จำเป็นครบถ้วนหรือไม่ (เช่น userId, eventId, และ seatIds ต้องไม่เป็นค่าว่าง) ก่อนจะส่งไปประมวลผลต่อ
    - calculateTotal(pricePerSeat: double): คำนวณราคาสุทธิโดยนำจำนวนที่นั่งที่เลือก (seatIds.length) คูณกับราคาต่อที่นั่งที่ส่งเข้ามา
    - updateStatus(newStatus: String): จัดการการเปลี่ยนสถานะของ Object การจอง เช่น เปลี่ยนจาก pending เป็น confirmed หรือ cancelled เพื่อให้ State ของข้อมูลถูกต้องเสมอ
+2. Entity: Seat (ข้อมูลที่นั่ง)
+   - isAvailable(): ตรวจสอบสถานะภายในตัวเองว่าค่าใน Field seatStatus เป็น "available" หรือไม่
+   - determinePriceByZone(): ระบุ Logic ในการกำหนดราคาตามที่เจอกันใน Workshop เช่น ถ้า zone == "A" ให้คืนค่าราคา VIP (2,000 บาท) ถ้าโซนอื่นให้คืนค่าราคาปกติ (1,500 บาท)
+3. Entity: Event (ข้อมูลกิจกรรม)
+   - hasStarted(currentTime: DateTime): ตรวจสอบว่ากิจกรรมเริ่มต้นขึ้นหรือยัง เพื่อป้องกันการจองตั๋วหลังจากกิจกรรมเริ่มไปแล้ว
+   - isSoldOut(currentBooked: int, capacity: int): ตรวจสอบสถานะเบื้องต้นว่าจำนวนที่นั่งเต็มตามความจุหรือไม่

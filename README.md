@@ -124,5 +124,21 @@ Attributes: ticketId,qrcode
 ]
 
 ---
+## **Task 2**
+type BookingService interface {
 
+    // สำหรับ POST /bookings
+    CreateBooking(req BookingRequest) (BookingResponse, error)
+    
+    // สำหรับ GET /bookings/{bookingId}
+    GetBookingByID(bookingID string) (BookingDetails, error)
 
+    // สำหรับ DELETE /bookings/{bookingId}
+    CancelBooking(bookingID string) (MessageResponse, error)
+
+    // สำหรับ GET /events/{eventId}/seats
+    GetSeatsByEvent(eventID string) ([]SeatStatus, error)
+  
+}
+
+---

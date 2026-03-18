@@ -145,6 +145,6 @@ type BookingService interface {
 ## **Task 3**
 
 1. Entity: Booking (ข้อมูลการจอง)
-   isValid(): ตรวจสอบว่าข้อมูลพื้นฐานที่จำเป็นครบถ้วนหรือไม่ (เช่น userId, eventId, และ seatIds ต้องไม่เป็นค่าว่าง) ก่อนจะส่งไปประมวลผลต่อ
-   calculateTotal(pricePerSeat: double): คำนวณราคาสุทธิโดยนำจำนวนที่นั่งที่เลือก (seatIds.length) คูณกับราคาต่อที่นั่งที่ส่งเข้ามา
-   updateStatus(newStatus: String): จัดการการเปลี่ยนสถานะของ Object การจอง เช่น เปลี่ยนจาก pending เป็น confirmed หรือ cancelled เพื่อให้ State ของข้อมูลถูกต้องเสมอ
+   - isValid(): ตรวจสอบว่าข้อมูลพื้นฐานที่จำเป็นครบถ้วนหรือไม่ (เช่น userId, eventId, และ seatIds ต้องไม่เป็นค่าว่าง) ก่อนจะส่งไปประมวลผลต่อ
+   - calculateTotal(pricePerSeat: double): คำนวณราคาสุทธิโดยนำจำนวนที่นั่งที่เลือก (seatIds.length) คูณกับราคาต่อที่นั่งที่ส่งเข้ามา
+   - updateStatus(newStatus: String): จัดการการเปลี่ยนสถานะของ Object การจอง เช่น เปลี่ยนจาก pending เป็น confirmed หรือ cancelled เพื่อให้ State ของข้อมูลถูกต้องเสมอ

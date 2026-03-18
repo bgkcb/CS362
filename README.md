@@ -124,7 +124,7 @@ Attributes: ticketId,qrcode
 ]
 
 ---
-## **Task 2**
+## **Task 2: Interface Design (Internal Contract)**
 type BookingService interface {
 
     // สำหรับ POST /bookings
@@ -142,7 +142,7 @@ type BookingService interface {
 }
 
 ---
-## **Task 3**
+## **Task 3: Logic Refinement in Entity**
 
 1. Entity: Booking (ข้อมูลการจอง)
    - isValid(): ตรวจสอบว่าข้อมูลพื้นฐานที่จำเป็นครบถ้วนหรือไม่ (เช่น userId, eventId, และ seatIds ต้องไม่เป็นค่าว่าง) ก่อนจะส่งไปประมวลผลต่อ
